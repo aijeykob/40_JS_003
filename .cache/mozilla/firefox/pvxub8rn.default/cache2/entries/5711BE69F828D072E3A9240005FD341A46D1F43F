@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>linkmarker.ru - Бесплатный сервис для хранения ваших интернет-закладок</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="keywords" content="онлайн закладки, сервис закладок, менеджер закладок, букмарк, избранное, католог ссылок, ссылки, веб, онлайн, сервис, записная книжка, бесплатно">
+<meta name="description" content="Сервис для хранения онлайн закладок с возможностью поиска по ключевым словам и создания собственного каталога интернет-ссылок">
+<link rel="shortcut icon" href="http://www.linkmarker.ru/favicon.ico" type="image/x-icon">
+<link href="http://www.linkmarker.ru/css/style.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS feed" href="http://www.linkmarker.ru/rss/feed.xml">
+<script type="text/javascript">
+<!--
+var search_mode=2,z100_mode=1,search_paths=new Array("/search/","/search/","");
+//-->
+</script>
+<script type="text/javascript" src="/js/js.js?v=2" charset="windows-1251"></script>
+</head>
+
+<body>
+<img src="/img/1.gif" width=86 height=60 alt="LinkMarker" class="logo">
+<h1>Сто Закладок &rarr; LinkMarker</h1>
+<span class="s1">Сервис для хранения ссылок на ваши любимые интернет-сайты</span>
+<div class="clr"></div>
+<div class="hline"><a href="http://www.linkmarker.ru/">linkmarker.ru</a>&raquo;</div>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td class="lhcol">
+<br>
+<div class="nav s80">
+<div><a href="http://www.linkmarker.ru/register/">Регистрация</a></div>
+<div><a href="http://www.linkmarker.ru/help/">С чего начать</a></div>
+<div><a href="http://www.linkmarker.ru/testpage/">Тестовая страница</a></div>
+<div><a href="http://www.linkmarker.ru/users/">Пользователи</a></div>
+<div><a href="http://catalog.linkmarker.ru/">Каталог сайтов</a></div>
+<div><a href="http://www.linkmarker.ru/links/">В помощь вебмастеру</a></div>
+</div><br>
+<!--begin of Rambler's Top100 code -->
+<img src="http://counter.rambler.ru/top100.cnt?1122027" alt="" width=1 height=1 border=0>
+<!--end of Top100 code-->
+<!--Rating@Mail.ru COUNTER--><img height=1 width=1 src="http://d1.cf.b2.a1.top.list.ru/counter?id=1241390"/><!--/COUNTER-->
+<!--LiveInternet counter--><script type="text/javascript"><!--
+new Image().src = "http://counter.yadro.ru/hit?r"+escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";"+Math.random();
+//--></script><!--/LiveInternet-->
+
+<div class="hline pl5">Поиск по темам:</div>
+<div class="nav s80"><a href="http://www.linkmarker.ru/key/literatura/">литература</a><br><a href="http://www.linkmarker.ru/key/knigi/">книги</a><br><a href="http://www.linkmarker.ru/key/deti/">дети</a><br><a href="http://www.linkmarker.ru/key/biblioteka/">библиотека</a><br><a href="http://www.linkmarker.ru/key/zdorove/">здоровье</a><br><a href="http://www.linkmarker.ru/key/ucheba/">учёба</a><br><a href="http://www.linkmarker.ru/key/psihologiya/">психология</a><br><a href="http://www.linkmarker.ru/key/obuchenie/">обучение</a><br><a href="http://www.linkmarker.ru/key/obrazovanie/">образование</a><br><a href="http://www.linkmarker.ru/key/stroitelstvo/">строительство</a><br><a href="http://www.linkmarker.ru/key/zarabotok/">заработок</a><br><a href="http://www.linkmarker.ru/key/otdih/">отдых</a><br><a href="http://www.linkmarker.ru/key/remont/">ремонт</a><br><a href="http://www.linkmarker.ru/key/kupit/">купить</a><br><a href="http://www.linkmarker.ru/key/online/">online</a><br><a href="http://www.linkmarker.ru/key/igri/">игры</a><br><a href="http://www.linkmarker.ru/key/novosti/">новости</a><br><a href="http://www.linkmarker.ru/key/biznes/">бизнес</a><br><a href="http://www.linkmarker.ru/key/skachat/">скачать</a><br><a href="http://www.linkmarker.ru/key/pedagogika/">педагогика</a><br><a href="http://www.linkmarker.ru/key/russkiy-yazik/">русский язык</a><br><a href="http://www.linkmarker.ru/key/besplatno/">бесплатно</a><br><a href="http://www.linkmarker.ru/key/tsena/">цена</a><br><a href="http://www.linkmarker.ru/key/psiholog/">психолог</a><br><a href="http://www.linkmarker.ru/key/adidas-gazelle/">adidas gazelle</a><br><a href="http://www.linkmarker.ru/key/poeziya/">поэзия</a><br><a href="http://www.linkmarker.ru/key/roditeli/">родители</a><br><a href="http://www.linkmarker.ru/key/slovar/">словарь</a><br><a href="http://www.linkmarker.ru/key/oborudovanie/">оборудование</a><br><a href="http://www.linkmarker.ru/key/vospitanie/">воспитание</a></div>
+<br><br>&nbsp;
+</td>
+<td class="ccol">
+<div class="c s"><form action="/search/" method="get" id="search_form">Искать слова: <input type="text" name="ss" size="30" value="" class="inp2"> <div id="search_ddlist" onClick="show_drop_down();">на всем сайте</div> <input type="submit" value="Найти !" class="fli2"></form></div>
+<div class="sph15"></div>
+<br>
+<div class="s70 ita"><strong>Закладка</strong> - бумажка или ленточка, вкладываемая в книгу, чтобы заметить нужную страницу.<br>(Толковый словарь С.И.Ожегова)</div>
+<br>
+<ul class="s70">
+<li>Используя сервис linkmarker.ru вы можете запомнить все ссылки на интересные интернет-страницы, которые найдете в сети. Для доступа к сохраненным ссылкам можно использовать любой компьютер, находящийся дома, на работе, в школе или другом месте, где есть подключение к интернету.</li>
+<li>Вы можете посмотреть популярные ссылки, добавленные другими пользователями, а также можете открыть доступ к своим закладкам для друзей и знакомых.</li>
+<li>Для зарегистрированных пользователей предоставляются дополнительные сервисы: записная книжка, хранение данных, ежедневник и многое другое...</li>
+<li>Все сервисы является бесплатным для пользователей, не требует активации, установки каких-либо дополнительных программ и не содержит ограничений по времени использования.</li>
+</ul>
+<br>
+<table cellpadding="3" cellspacing="0" border="0" class="tabs">
+<tr><td class="tabsp">&nbsp;</td><td class="tab act"><h3>Новые закладки</h3></td><td class="tabsp">&nbsp;</td><td class="tab inact"><a href="http://www.linkmarker.ru/popular/">Популярные</a></td><td class="tabtail">&nbsp;</td></tr>
+</table>
+<br>
+<table cellpadding="0" cellspacing="0" border="0" class="bokmarks">
+<tr><td>
+<h4><a href="http://altblog.ru/landing-page-dlya-bloga/" target="_blank" rel=nofollow><img src="http://www.linkmarker.ru/thumbnails/b/u1i6yo9j8oos0wk0wsowcsos.jpg" width="100" height="75" alt="">Landing Page для блога</a></h4>
+<span>добавил: <a href="http://www.linkmarker.ru/timon/">timon</a></span><br>
+<span>ключевые слова: <a href="http://www.linkmarker.ru/key/landing-page/">landing page</a>, <a href="http://www.linkmarker.ru/key/blog/">blog</a></span><br>
+<span>[<a href="http://www.linkmarker.ru/save/" onclick="location.href='/save/?bookmark=113745';return false;">сохранить</a>]</span>
+</td></tr><tr><td>
+<h4><a href="http://mignews.com/news/celebrities/cis/210408_201330_04599.html" target="_blank" rel=nofollow><img src="http://www.linkmarker.ru/thumbnails/4/wh3rgx91saoososcw40k80g4.jpg" width="100" height="75" alt="">Пэрис Хилтон сорвала собственный концерт в Москве</a></h4>
+<span>добавил: <a href="http://www.linkmarker.ru/timon/">timon</a></span><br>
+<span>ключевые слова: <a href="http://www.linkmarker.ru/key/peris-hilton/">пэрис хилтон</a>, <a href="http://www.linkmarker.ru/key/kontsert/">концерт</a>, <a href="http://www.linkmarker.ru/key/znamenitosti/">знаменитости</a>, <a href="http://www.linkmarker.ru/key/skandal/">скандал</a></span><br>
+<span>[<a href="http://www.linkmarker.ru/save/" onclick="location.href='/save/?bookmark=113744';return false;">сохранить</a>]</span>
+</td></tr><tr><td>
+<h4><a href="http://allstars.pp.ru/lenta/2008/02/25/s1.html" target="_blank" rel=nofollow><img src="http://www.linkmarker.ru/thumbnails/9/crkfkn5imo8sssw0gssgs0og.jpg" width="100" height="75" alt="">Популярный актер Дмитрий Дюжев женился</a></h4>
+<span>добавил: <a href="http://www.linkmarker.ru/triplex/">triplex</a></span><br>
+<span>ключевые слова: <a href="http://www.linkmarker.ru/key/dmitriy-dyuzhev/">Дмитрий Дюжев</a>, <a href="http://www.linkmarker.ru/key/znamenitosti/">знаменитости</a></span><br>
+<span>[<a href="http://www.linkmarker.ru/save/" onclick="location.href='/save/?bookmark=113743';return false;">сохранить</a>]</span>
+</td></tr><tr><td>
+<h4><a href="http://ura-inform.com/society/2008/04/16/monro/" target="_blank" rel=nofollow><img src="http://www.linkmarker.ru/thumbnails/3/vlkvkvs93gg40s48csg0o0w4.jpg" width="100" height="75" alt="">Эротическое видео Монро продано за полтора миллиона</a></h4>
+<span>добавил: <a href="http://www.linkmarker.ru/ulyana/">ulyana</a></span><br>
+<span>ключевые слова: <a href="http://www.linkmarker.ru/key/merilin-monro/">Мэрилин Монро</a>, <a href="http://www.linkmarker.ru/key/erotika/">эротика</a>, <a href="http://www.linkmarker.ru/key/video/">видео</a></span><br>
+<span>[<a href="http://www.linkmarker.ru/save/" onclick="location.href='/save/?bookmark=113737';return false;">сохранить</a>]</span>
+</td></tr><tr><td>
+<h4><a href="http://e-news.com.ua/show/166743.html" target="_blank" rel=nofollow><img src="http://www.linkmarker.ru/thumbnails/b/zhgkxrnwfks48gsoocoss440.jpg" width="100" height="75" alt="">Алина Кабаева - главная светская персона месяца</a></h4>
+<span>добавил: <a href="http://www.linkmarker.ru/bumbarash/">bumbarash</a></span><br>
+<span>ключевые слова: <a href="http://www.linkmarker.ru/key/alina-kabaeva/">Алина Кабаева</a>, <a href="http://www.linkmarker.ru/key/znamenitosti/">знаменитости</a></span><br>
+<span>[<a href="http://www.linkmarker.ru/save/" onclick="location.href='/save/?bookmark=113735';return false;">сохранить</a>]</span>
+</td></tr><tr><td>
+<h4><a href="http://www.shoowbiz.ru/news/16492.html" target="_blank" rel=nofollow><img src="http://www.linkmarker.ru/thumbnails/e/nv5xo768rw4s4wg00scgcgc8.jpg" width="100" height="75" alt="">Солист группы «БиС» женился на Кире Пластининой</a></h4>
+<span>добавил: <a href="http://www.linkmarker.ru/ulyana/">ulyana</a></span><br>
+<span>ключевые слова: <a href="http://www.linkmarker.ru/key/znamenitosti/">знаменитости</a>, <a href="http://www.linkmarker.ru/key/skandali/">скандалы</a></span><br>
+<span>[<a href="http://www.linkmarker.ru/save/" onclick="location.href='/save/?bookmark=113730';return false;">сохранить</a>]</span>
+</td></tr><tr><td>
+<h4><a href="http://mediaua.com.ua/detail/43401" target="_blank" rel=nofollow><img src="http://www.linkmarker.ru/thumbnails/1/mlp89g5gxog80gs4wgwswk8k.jpg" width="100" height="75" alt="">Рауза Сафина: Корикова сыну – не жена</a></h4>
+<span>добавил: <a href="http://www.linkmarker.ru/triplex/">triplex</a></span><br>
+<span>ключевые слова: <a href="http://www.linkmarker.ru/key/marat-safin/">Марат Сафин</a>, <a href="http://www.linkmarker.ru/key/skandal/">скандал</a>, <a href="http://www.linkmarker.ru/key/znamenitosti/">знаменитости</a></span><br>
+<span>[<a href="http://www.linkmarker.ru/save/" onclick="location.href='/save/?bookmark=113719';return false;">сохранить</a>]</span>
+</td></tr><tr><td>
+<h4><a href="http://yellowpress.ws/?public=6296#1" target="_blank" rel=nofollow><img src="http://www.linkmarker.ru/thumbnails/5/mpdusunnf4s88wgcwwok8ccs.jpg" width="100" height="75" alt="">Маша Малиновская сгорела заживо!</a></h4>
+<span>добавил: <a href="http://www.linkmarker.ru/yoggypop/">yoggypop</a></span><br>
+<span>ключевые слова: <a href="http://www.linkmarker.ru/key/masha-malinovskaya/">Маша Малиновская</a>, <a href="http://www.linkmarker.ru/key/znamenitosti/">знаменитости</a>, <a href="http://www.linkmarker.ru/key/shok/">шок</a></span><br>
+<span>[<a href="http://www.linkmarker.ru/save/" onclick="location.href='/save/?bookmark=113718';return false;">сохранить</a>]</span>
+</td></tr><tr><td>
+<h4><a href="http://stars.glavred.info/?/news/2008/04/15/173049-18#3" target="_blank" rel=nofollow><img src="http://www.linkmarker.ru/thumbnails/3/j52uh52w12cckkgc8swssow4.jpg" width="100" height="75" alt="">Бритни Спирс выпустит свои видео-дневники</a></h4>
+<span>добавил: <a href="http://www.linkmarker.ru/kotovasik/">kotovasik</a></span><br>
+<span>ключевые слова: <a href="http://www.linkmarker.ru/key/britni-spirs/">бритни спирс</a>, <a href="http://www.linkmarker.ru/key/znamenitosti/">знаменитости</a></span><br>
+<span>[<a href="http://www.linkmarker.ru/save/" onclick="location.href='/save/?bookmark=113706';return false;">сохранить</a>]</span>
+</td></tr><tr><td>
+<h4><a href="http://www.jpgs.ru/news/2008/04/n359.html" target="_blank" rel=nofollow><img src="http://www.linkmarker.ru/thumbnails/a/wkuqktyd1s800g4cko008gs4.jpg" width="100" height="75" alt="">50-летняя Шэрон Стоун повторила сцену без трусов — в реале</a></h4>
+<span>добавил: <a href="http://www.linkmarker.ru/bumbarash/">bumbarash</a></span><br>
+<span>ключевые слова: <a href="http://www.linkmarker.ru/key/sheron-stoun/">Шэрон Стоун</a>, <a href="http://www.linkmarker.ru/key/foto/">фото</a>, <a href="http://www.linkmarker.ru/key/znamenitosti/">знаменитости</a>, <a href="http://www.linkmarker.ru/key/pod-yubkoy/">под юбкой</a></span><br>
+<span>[<a href="http://www.linkmarker.ru/save/" onclick="location.href='/save/?bookmark=113693';return false;">сохранить</a>]</span>
+</td></tr>
+</table>
+<br>
+<span class="s80">Информация об обновлениях этого раздела доступна в <a href="http://www.linkmarker.ru/rss/feed.xml">RSS <img src="/img/rss.gif" alt="" class="rss"></a></span>
+<br><br>&nbsp;
+</td>
+<td class="rhcol">
+<form action="http://www.linkmarker.ru/login/" method="post">
+<div class="c">
+<div><input type="text" name="ln" value="Имя" class="inp2 inp-ln" onFocus="if(this.value=='Имя')this.value='';"></div>
+<div><input type="text" name="lp" value="Пароль" class="inp2 inp-lp" onFocus="if(this.value=='Пароль')replace_pw(this);"> <input type="submit" name="su2" id="su2" value="Войти" class="fli2"></div>
+<div><input type="checkbox" name="mem" value="1" class="inp3"><a href="http://www.linkmarker.ru/login/">Запомнить меня</a></div>
+<br><br>
+</div>
+</form>
+</td>
+</tr>
+</table>
+
+<div class="cpy"><!-- <div class="flright"><a href="http://www.linkmarker.ru/r/?url=url1" target="_blank"><img src="http://www.linkmarker.ru/img/buttons/im_88x31_1.gif" border=0 alt="Наш домик в интернете" title="Наш домик в интернете"></a> -->
+<!--begin of Top100 logo--><!-- <a href="http://www.linkmarker.ru/r/?url=url2"><img src="http://www.linkmarker.ru/img/buttons/banner-88x31-rambler-gray2.gif" alt="Rambler's Top100" width=88 height=31 border=0></a> --><!--end of Top100 logo -->
+<!--Rating@Mail.ru LOGO--><!-- <a target=_top href="http://top.mail.ru/jump?from=1241390"><img SRC="http://d1.cf.b2.a1.top.list.ru/counter?id=1241390;t=69;l=1" border=0 height=31 width=38 alt="Рейтинг@Mail.ru"/></a> --> <!--/LOGO--></div>
+&copy; 2009 <a href="http://www.linkmarker.ru/">linkmarker.ru</a> | <a href="http://www.linkmarker.ru/about/">о проекте</a> | <a href="http://www.linkmarker.ru/terms/">условия</a> | <a href="http://www.linkmarker.ru/help/">помощь</a> | <a href="http://www.linkmarker.ru/contact/">контакты</a><br><br></div>
+<div id="glass" onClick="hide_drop_down();"></div>
+
+<div></div>
+<script type="text/javascript">
+<!--
+//z100_move_div("id_bgn", "radv2");
+//-->
+</script>
+</body>
+</html>
+yФМП      \M/\M/?Ч;і\MХ       :http://www.linkmarker.ru/ necko:classified 1 strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Wed, 19 Dec 2018 13:52:47 GMT
+Server: Apache
+Last-Modified: Wed, 19 Dec 2018 13:25:01 GMT
+Content-Type: text/html; charset=windows-1251
+ original-response-headers Date: Wed, 19 Dec 2018 13:52:47 GMT
+Server: Apache
+Last-Modified: Wed, 19 Dec 2018 13:25:01 GMT
+Keep-Alive: timeout=2, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=windows-1251
+ uncompressed-len 0 predictor::resource-count 20 predictor::http://www.linkmarker.ru/css/style.css 1,1,1545227567,4096 predictor::http://www.linkmarker.ru/js/js.js?v=2 1,1,1545227567,4096 predictor::http://www.linkmarker.ru/img/1.gif 1,1,1545227567,4097 predictor::http://counter.rambler.ru/top100.cnt?1122027 1,1,1545227567,4096 predictor::http://d1.cf.b2.a1.top.list.ru/counter?id=1241390 1,1,1545227567,4096 predictor::http://www.linkmarker.ru/thumbnails/b/u1i6yo9j8oos0wk0wsowcsos.jpg 1,1,1545227567,4097 predictor::http://www.linkmarker.ru/thumbnails/4/wh3rgx91saoososcw40k80g4.jpg 1,1,1545227567,4097 predictor::http://www.linkmarker.ru/thumbnails/9/crkfkn5imo8sssw0gssgs0og.jpg 1,1,1545227567,4097 predictor::http://www.linkmarker.ru/thumbnails/3/vlkvkvs93gg40s48csg0o0w4.jpg 1,1,1545227567,4097 predictor::http://www.linkmarker.ru/thumbnails/b/zhgkxrnwfks48gsoocoss440.jpg 1,1,1545227567,4097 predictor::http://www.linkmarker.ru/thumbnails/e/nv5xo768rw4s4wg00scgcgc8.jpg 1,1,1545227567,4097 predictor::http://www.linkmarker.ru/thumbnails/1/mlp89g5gxog80gs4wgwswk8k.jpg 1,1,1545227567,4097 predictor::http://www.linkmarker.ru/thumbnails/5/mpdusunnf4s88wgcwwok8ccs.jpg 1,1,1545227567,4097 predictor::http://www.linkmarker.ru/thumbnails/3/j52uh52w12cckkgc8swssow4.jpg 1,1,1545227567,4097 predictor::http://www.linkmarker.ru/thumbnails/a/wkuqktyd1s800g4cko008gs4.jpg 1,1,1545227567,4097 predictor::http://www.linkmarker.ru/img/rss.gif 1,1,1545227567,4097 net-response-time-onstart 141 net-response-time-onstop 204 predictor::http://counter.yadro.ru/hit?r;s1680*1050*24;uhttp%3A//www.linkmarker.ru/;0.4419178969825933 1,1,1545227567,4096 predictor::http://www.linkmarker.ru/img/4.gif 1,1,1545227567,4096 predictor::http://www.linkmarker.ru/img/2.gif 1,1,1545227567,4096 predictor::http://www.linkmarker.ru/img/3.gif 1,1,1545227567,4096   ;з

@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<link rel="apple-touch-icon-precomposed" href="https://www.8host.com/blog/wp-content/themes/wp-8host-new/images/favicon/favicon-152.png">
+	<title>  Установка и настройка VNC в Ubuntu 18.04 |  www.8host.com</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link href="https://fonts.googleapis.com/css?family=Exo+2:700|Open+Sans:400,700&subset=latin,cyrillic" rel="stylesheet" type="text/css" />
+	<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+	<script>
+		var templateUrl = 'https://www.8host.com/blog/wp-content/themes/wp-8host-new';
+	</script>
+		
+<!-- All in One SEO Pack 2.3.14.2 by Michael Torbert of Semper Fi Web Design[-1,-1] -->
+<meta name="description"  content="VNC (Virtual Network Computing) – это система удалённого доступа, которая позволяет использовать клавиатуру и мышь для взаимодействия с графическим интерфейсом" />
+
+<link rel="canonical" href="https://www.8host.com/blog/ustanovka-i-nastrojka-vnc-v-ubuntu-18-04/" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.8host.com\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-pagenavi-css'  href='https://www.8host.com/blog/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' media='all' />
+<script type='text/javascript' src='https://www.8host.com/blog/wp-content/themes/wp-8host-new/js/jquery.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://www.8host.com/blog/wp-content/themes/wp-8host-new/js/skel.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://www.8host.com/blog/wp-content/themes/wp-8host-new/js/skel-layers.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://www.8host.com/blog/wp-content/themes/wp-8host-new/js/init.js?ver=1.0.0'></script>
+<script type='text/javascript' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?ver=4.8'></script>
+<link rel='https://api.w.org/' href='https://www.8host.com/blog/wp-json/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.8host.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.8host.com%2Fblog%2Fustanovka-i-nastrojka-vnc-v-ubuntu-18-04%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.8host.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.8host.com%2Fblog%2Fustanovka-i-nastrojka-vnc-v-ubuntu-18-04%2F&#038;format=xml" />
+
+ <!-- OneAll.com / Social Login for WordPress / v5.3 -->
+<script data-cfasync="false" type="text/javascript">
+ (function() {
+  var oa = document.createElement('script'); oa.type = 'text/javascript';
+  oa.async = true; oa.src = 'https://8host.api.oneall.com/socialize/library.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(oa, s);
+ })();
+</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script type="text/javascript" src="https://www.8host.com/blog/wp-content/plugins/si-captcha-for-wordpress/captcha/si_captcha.js?ver=1545227632"></script>
+<!-- begin SI CAPTCHA Anti-Spam - login/register form style -->
+<style type="text/css">
+.si_captcha_small { width:175px; height:45px; padding-top:10px; padding-bottom:10px; }
+.si_captcha_large { width:250px; height:60px; padding-top:10px; padding-bottom:10px; }
+img#si_image_com { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_reg { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_log { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_side_login { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_checkout { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_jetpack { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_bbpress_topic { border-style:none; margin:0; padding-right:5px; float:left; }
+.si_captcha_refresh { border-style:none; margin:0; vertical-align:bottom; }
+div#si_captcha_input { display:block; padding-top:15px; padding-bottom:5px; }
+label#si_captcha_code_label { margin:0; }
+input#si_captcha_code_input { width:65px; }
+p#si_captcha_code_p { clear: left; padding-top:10px; }
+.si-captcha-jetpack-error { color:#DC3232; }
+</style>
+<!-- end SI CAPTCHA Anti-Spam - login/register form style -->
+ 
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://www.8host.com/blog/wp-content/themes/wp-8host-new/js/main.js"></script>
+    <noscript>
+		<link rel="stylesheet" href="https://www.8host.com/blog/wp-content/themes/wp-8host-new/css/skel.css" />
+		<link rel="stylesheet" href="https://www.8host.com/blog/wp-content/themes/wp-8host-new/css/style.css" />
+		<link rel="stylesheet" href="https://www.8host.com/blog/wp-content/themes/wp-8host-new/css/style-xlarge.css" />
+	</noscript>
+<!-- End Google Tag Manager -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41429720-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body class="">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5QBLV4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5QBLV4');</script>
+
+<script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=h/oz4XxFtFEerFNe9q2/YfYiHnSGXTUntBIbuR5tJptSPCyV0RzFc5qa1ST5*UCnXjj/fZ6XFBFRRAECdSw8toPbCzrpiwrq9KLsMAxI*MtjZe52iGwDqpq3hD6zbZgjeK6dayCbPtOh1A4DGAQjNfOu/DVXINl/cP*k/N9egxQ-';</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter32842552 = new Ya.Metrika({
+                    id:32842552,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/32842552" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- End Google Tag Manager -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41429720-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+	<!-- Header -->
+	<header id="header">
+		<h1><a href="https://www.8host.com"><img src="https://www.8host.com/blog/wp-content/themes/wp-8host-new/images/logo-8host.png" alt="Профессиональный облачный хостинг. Быстрый, надежный и свободный"/></a></h1>
+		<nav id="nav">
+			<ul>
+				<li>
+					<a href="https://www.8host.com/">Главная</a>
+				</li>
+				<li>
+					<a href="https://www.8host.com/features">Преимущества</a>
+					<div class="drop">
+						<ul class="drop-menu">
+							<li><a href="https://www.8host.com/features#features-tech">Технологии</a>
+								<div class="drop-info hidden">Размещение серверов в надежных дата-центрах Европы. Откройте облачный VPS/VDS сервер на быстрых SSD за 1 минуту!</div>
+							</li>
+
+							<li><a href="https://www.8host.com/features#features-freedom">Свобода и безопасность</a>
+								<div class="drop-info hidden">Лучший хостинг:<br/>- оградит данные от нежелательного доступа в охраняемом европейском ЦОДе<br/>- примет оплату хоть в bitcoin ! <br/>- позволит поставить свой дистрибутив</div>
+							</li>
+
+							<li><a href="https://www.8host.com/features#features-reliability">Надежность</a>
+								<div class="drop-info hidden">- защита от DDos-атак <br/>- бесплатный backup <br/>- Uptime 99,9999% <br/>- ЦОД - TIER III <br/>- провайдер - TIER I</div>
+							</li>
+
+							<li><a href="https://www.8host.com/features#features-access">Доступность</a>
+								<div class="drop-info hidden">Поддержим на русском языке 24/7/365 Работаем с юрлицами и физлицами. Вам прямо сейчас нужно 24 ядра и 72 Gb RAM ? Пожалуйста!</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="https://www.8host.com/pricing">Стоимость</a>
+					<div class="drop drop-cost">
+						<ul class="drop-menu">
+							<li><a href="https://www.8host.com/pricing">Цены VPS</a>
+								<div class="drop-info hidden">Наши выгодные тарифы докажут, что дешевый хостинг вы еще не знали!</div>
+							</li>
+
+							<li><a href="https://www.8host.com/pricing#pricing-cms">Цены CMS</a>
+								<div class="drop-info hidden">Минутное дело: выберите конфигурацию, оплатите и CMS на VPS готова. <br/>Money Back – 30 дней!</div>
+							</li>
+							
+							<li><a href="https://www.8host.com/pricing#payment-methods">Способы оплаты</a>
+								<div class="drop-info hidden">Банковскими картами, электронной валютой, через терминалы Qiwi, Webmoney, PayPal, Новоплат и др.</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="https://www.8host.com/blog/">Информаторий</a>
+					<div class="drop drop-informateka">
+						<ul class="drop-menu">
+							<li><a href="https://www.8host.com/contact-us">Техподдержка</a>
+								<div class="drop-info hidden">Задайте вопрос в службу поддержки 24/7/365</div>
+							</li>
+
+							<li><a href="https://www.8host.com/blog">База знаний</a>
+								<div class="drop-info hidden">Найдите ответы в нашей базе и познакомьтесь с рекомендациями</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="https://www.8host.com/contact-us">Контакты</a>
+					<div class="drop drop-informateka">
+						<ul class="drop-menu">
+							<li><a href="https://www.facebook.com/pages/8Host/1063590243670236?ref=hl">Facebook</a></li>
+							<li><a href="https://twitter.com/8Host_social">Twitter</a></li>
+							<li><a href="https://plus.google.com/u/0/b/105145648824775848083/105145648824775848083/about">Google+</a></li>
+							<li><a href="https://vk.com/8host">VK</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="https://www.8host.com/portal/" class="button login-special">Вход</a></li>
+				<li><a href="https://www.8host.com/portal/register.php" class="button register-special">Регистрация</a></li>
+			</ul>
+		</nav>
+	</header>
+
+
+
+
+
+
+
+
+
+
+
+<section class="wrapper">
+	<div class="container">
+		<div class="row">
+								<div class="3u 12u$(small) article-sidebar">
+
+					<aside class="sidebar" role="complementary">
+						<div class="sidebar-widget">
+							<div id="text-7" class="widget_text"><h3>Предложение от 8host.com</h3>			<div class="textwidget"><p><a href="https://www.8host.com/pricing?utm_source=blog_8host&amp;utm_medium=cpc&amp;utm_campaign=blog"><img src="https://www.8host.com/blog/wp-content/uploads/240x240_1.jpg" /></a></p>
+</div>
+		</div>						</div>
+					</aside>
+
+					</div>
+				
+				
+					<div class="6u 12u$(small)">
+				
+				<main role="main">
+					<!-- section -->
+					<section>
+
+						
+						<!-- article -->
+						<article id="post-4094" class="post-4094 post type-post status-publish format-standard hentry category-ubuntu tag-ubuntu-18-04 tag-vnc">
+
+							<!-- post thumbnail -->
+													<!-- /post thumbnail -->
+
+						<!-- post title -->
+						<header class="major article-header">
+							<h1>
+								<a href="https://www.8host.com/blog/ustanovka-i-nastrojka-vnc-v-ubuntu-18-04/" title="Установка и настройка VNC в Ubuntu 18.04">Установка и настройка VNC в Ubuntu 18.04</a>
+							</h1>
+						</header>
+						<!-- /post title -->
+
+						<!-- post details -->
+						<span class="date article-date"><i class="fa fa-calendar" aria-hidden="true"></i> Август 27, 2018 12:37 пп</span>
+						<span class="date article-date">2&nbsp;294 views</span>
+						<span class="date article-date"> | <i class="fa fa-comments" aria-hidden="true"></i> <span class="dsq-postid" data-dsqidentifier="4094 https://www.8host.com/blog/?p=4094">Комментариев нет</span></span>
+						<p class="article-category single-post-category"><i class="fa fa-tags" aria-hidden="true"></i> <a href="https://www.8host.com/blog/category/ubuntu/" rel="tag">Ubuntu</a>						<span class="author">| <i class="fa fa-user" aria-hidden="true"></i> <a href="https://www.8host.com/blog/author/amber/" title="Записи Amber" rel="author">Amber</a></span>
+						<span class="comments">| <a href="https://www.8host.com/blog/ustanovka-i-nastrojka-vnc-v-ubuntu-18-04/#respond"><span class="dsq-postid" data-dsqidentifier="4094 https://www.8host.com/blog/?p=4094">Комментировать запись</span></a></span></p>
+						<!-- /post details -->
+
+						<p>VNC (Virtual Network Computing) – это система удалённого доступа, которая позволяет использовать клавиатуру и мышь для взаимодействия с графическим интерфейсом рабочего стола удалённого сервера. С её помощью можно управлять файлами, программным обеспечением и настройками удалённого сервера, не обращаясь к командной строке.</p>
+<p>Данный мануал поможет установить VNC на виртуальный выделенный сервер Ubuntu 16.04 и настроить безопасное подключение при помощи SSH-туннеля. Сервер VNC будет использовать <a href="https://www.tightvnc.com/">TightVNC</a>, быстрый и легковесный пакет удалённого управления, поддерживающий работу даже при медленном интернете.</p>
+<h3>Требования</h3>
+<ul>
+<li>Сервер Ubuntu 18.04, настроенный по <a href="https://www.8host.com/blog/nachalnaya-nastrojka-servera-ubuntu-18-04/">этому мануалу</a>.</li>
+<li>Локальный компьютер с предустановленным клиентом VNC, который поддерживает VNC-соединения через SSH-туннель. Пользователи Windows могут установить <a href="https://www.tightvnc.com/">TightVNC</a>, <a href="https://www.realvnc.com/">RealVNC</a> или <a href="https://www.uvnc.com/">UltraVNC</a>. Пользователи Mac OS X могут обратиться к встроенному пакету <a href="https://support.apple.com/guide/mac-help/screen-sharing-overview-mh14066/mac">Screen Sharing</a> или использовать кроссплатформенные приложения (например, <a href="https://www.realvnc.com/">RealVNC</a>). Пользователи Linux могут выбрать vinagre, krdc, <a href="https://www.realvnc.com/">RealVNC</a>, <a href="https://www.tightvnc.com/">TightVNC</a> и т.п.</li>
+</ul>
+<h2>1: Установка среды рабочего стола и сервера VNC</h2>
+<p>По умолчанию серверы Ubuntu 18.04 поставляются без предустановленного графического окружения рабочего стола и сервера VNC. Потому сначала нужно установить эти компоненты. В данном мануале используются пакеты <a href="https://xfce.org/">Xfce</a> и TightVNC, доступные в официальном репозитории Ubuntu.</p>
+<p>Чтобы установить на сервер указанные пакеты, обновите индекс и введите команду:</p>
+<p><code>sudo apt update<br />
+sudo apt install xfce4 xfce4-goodies</code></p><div class="wpInsert wpInsertInPostAd wpInsertMiddle" style="margin: 5px; padding: 0px;
+display:block; text-align:center;"><ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-4672639452561295"
+     data-ad-slot="5305723615"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>Теперь установите TightVNC:</p>
+<p><code>sudo apt install tightvncserver</code></p>
+<p>Чтобы завершить начальную настройку сервера VNC после его установки и выбрать надёжный пароль, используйте команду vncserver.</p>
+<p><code>vncserver</code></p>
+<p>Команда предложит выбрать и подтвердить пароль:</p>
+<p><code>You will require a password to access your desktops.<br />
+Password:<br />
+Verify:</code></p>
+<p>Пароль должен быть длинной от шести до восьми символов. Более длинные пароли будут автоматически сокращены до 8 символов.</p>
+<p>После того как вы подтвердите пароль, у вас будет возможность создать пароль только для просмотра. Пользователи, получающие доступ к VNC при помощи пароля для просмотра, не смогут управлять VNC через мышь или клавиатуру. Такой пароль позволяет вам демонстрировать VNC другим пользователям в случае необходимости.</p>
+<p>Затем процесс завершит начальную настройку VNC и создаст конфигурационные файлы.</p>
+<p><code>Would you like to enter a view-only password (y/n)? n<br />
+xauth:  file /home/8host/.Xauthority does not exist<br />
+New 'X' desktop is your_hostname:1<br />
+Creating default startup script /home/8host/.vnc/xstartup<br />
+Starting applications specified in /home/8host/.vnc/xstartup<br />
+Log file is /home/8host/.vnc/your_hostname:1.log</code></p>
+<h2>2: Настройка сервера VNC</h2>
+<p>Сначала нужно определить команды, которые сервер VNC будет выполнять при запуске. Эти команды должны находиться в файле xstartup в каталоге .vnc, который хранится в домашнем каталоге текущего пользователя. Сценарий запуска был создан командой vncserver, но его нужно откорректировать для взаимодействия с Xfce.</p>
+<p>При первом запуске VNC использует порт 5901. VNC называет этот порт :1. VNC может запускать другие экземпляры на другие порты, которые будут называться :2, :3, и т.д.</p>
+<p>Чтобы изменить настройки сервера VNC, нужно остановить экземпляр, использующий порт 5901.</p>
+<p><code>vncserver -kill :1</code></p>
+<p>Команда вернёт такое сообщение (PID будет отличаться):</p>
+<p><code>Killing Xtightvnc process ID 17648</code></p>
+<p>Создайте резервную копию файла xstartup:</p>
+<p><code>mv ~/.vnc/xstartup ~/.vnc/xstartup.bak</code></p>
+<p>Затем создайте новый файл xstartup:</p>
+<p><code>nano ~/.vnc/xstartup</code></p>
+<p>Вставьте в него следующие команды, которые будут выполняться автоматически при запуске сервера VNC. Сохраните и закройте файл.</p>
+<p><code>~/.vnc/xstartup<br />
+#!/bin/bash<br />
+xrdb $HOME/.Xresources<br />
+startxfce4 &amp;</code></p>
+<p>При помощи первой команды, xrdb $HOME/.Xresources, GUI сервера VNC читает файл .Xresources. В файле .Xresources пользователь может вносить  изменения в некоторые настройки графического рабочего стола (настраивать цвета терминала, темы курсора, шрифты). Вторая команда просто запускает Xfce, в котором хранится все графическое программное обеспечение, необходимое для управления сервером.</p>
+<p>Теперь нужно сделать файл исполняемым:</p>
+<p><code>sudo chmod +x ~/.vnc/xstartup</code></p>
+<p>Перезапустите VNC:</p>
+<p><code>vncserver</code></p>
+<p>Во время запуска сервер вернёт:</p>
+<p><code>New 'X' desktop is your_hostname:1<br />
+Starting applications specified in /home/8host/.vnc/xstartup<br />
+Log file is /home/8host/.vnc/your_hostname:1.log</code></p>
+<h2>3: Безопасное подключение к VNC</h2>
+<p>При подключении VNC не использует безопасные протоколы. Создайте SSH-туннель для безопасного подключения к серверу, а затем настройте клиент VNC  для поддержки туннеля вместо прямого подключения.</p>
+<p>Создайте на локальном компьютере соединение SSH, которое перейдет в localhost соединение для VNC. Вы можете сделать это в Linux или macOS через терминал с помощью следующей команды:</p>
+<p><code>ssh -L 5901:127.0.0.1:5901 -C -N -l 8host your_server_ip</code></p>
+<p>Флаг -L указывает привязки портов. В этом случае мы привязываем порт 5901 удаленного подключения к порту 5901 на локальном компьютере. Флаг  -C включает сжатие, а -N сообщает ssh, что выполнять удаленную команду не нужно. Параметр -l указывает имя удаленного входа.</p>
+<p>Не забудьте заменить 8host и your_server_ip своими данными.</p>
+<p>Если вы работаете через графический SSH-клиент, например PuTTY, используйте настройках SSH-туннеля your_server_ip в качестве IP-соединения и установите localhost: 5901 в качестве нового порта.</p>
+<p>Когда туннель запустится, используйте VNC клиент для подключения к localhost:5901. При этом будет запрошен пароль, который вы выбрали в разделе 1.</p>
+<p>После этого вы увидите стандартный экран Xfce.</p>
+<p>Вы можете получить доступ к файлам в своем домашнем каталоге с помощью диспетчера файлов или из командной строки.</p>
+<p>Нажмите CTRL + C в терминале, чтобы закрыть туннель SSH и вернуться в командную строку. Это также завершит ваш сеанс VNC.</p>
+<h2>4: Создание файла сервиса VNC</h2>
+<p>Теперь нужно настроить сервер VNC как сервис system.</p>
+<p>Создайте новый юнит-файл /etc/systemd/system/vncserver@.service:</p>
+<p><code>sudo nano /etc/systemd/system/vncserver@.service</code></p>
+<p>Символ @ в конце имени файла позволит вам передать аргумент, который можно использовать в конфигурации сервиса. С его помощью можно указать порт VNC, который нужно использовать при управлении сервисом.</p>
+<p>Добавьте в файл следующие строки. Обязательно измените значение User, Group, WorkingDirectory и имя пользователя в значении PIDFILE.</p>
+<p><code>/etc/systemd/system/vncserver@.service<br />
+[Unit]<br />
+Description=Start TightVNC server at startup<br />
+After=syslog.target network.target<br />
+[Service]<br />
+Type=forking<br />
+User=8host<br />
+Group=8host<br />
+WorkingDirectory=/home/8host<br />
+PIDFile=/home/8host/.vnc/%H:%i.pid<br />
+ExecStartPre=-/usr/bin/vncserver -kill :%i &gt; /dev/null 2&gt;&amp;1<br />
+ExecStart=/usr/bin/vncserver -depth 24 -geometry 1280x800 :%i<br />
+ExecStop=/usr/bin/vncserver -kill :%i<br />
+[Install]<br />
+WantedBy=multi-user.target</code></p>
+<p>Команда ExecStartPre останавливает VNC, если сервис уже запущен. Команда ExecStart запускает VNC и устанавливает глубину цвета – 24-битный цвет с разрешением 1280&#215;800. Вы также можете изменить эти параметры в зависимости от потребностей.</p>
+<p>Сохраните и закройте файл.</p>
+<p>Затем дайте сообщите системе про новый юнит файл.</p>
+<p><code>sudo systemctl daemon-reload</code></p>
+<p>Включите его:</p>
+<p><code>sudo systemctl enable vncserver@1.service</code></p>
+<p>Цифра 1, идущая за @, определяет, какой номер дисплея должен отображаться в сервисе, в этом случае это значение по умолчанию.</p>
+<p>Остановите текущий экземпляр сервера VNC, если он еще запущен.</p>
+<p><code>vncserver -kill :1</code></p>
+<p>Теперь попробуйте запустить его как любой другой сервис systemd:</p>
+<p><code>sudo systemctl start vncserver@1</code></p>
+<p>Чтобы убедиться, что сервер запущен, проверьте его состояние:</p>
+<p><code>sudo systemctl status vncserver@1</code></p>
+<p>vncserver@1.service &#8212; Start TightVNC server at startup</p>
+<p><code>Loaded: loaded (/etc/systemd/system/vncserver@.service; indirect; vendor preset: enabled)<br />
+Active: active (running) since Mon 2018-07-09 18:13:53 UTC; 2min 14s ago<br />
+Process: 22322 ExecStart=/usr/bin/vncserver -depth 24 -geometry 1280x800 :1 (code=exited, status=0/SUCCESS)<br />
+Process: 22316 ExecStartPre=/usr/bin/vncserver -kill :1 &gt; /dev/null 2&gt;&amp;1 (code=exited, status=0/SUCCESS)<br />
+Main PID: 22330 (Xtightvnc)<br />
+...</code></p>
+<p>Теперь сервис VNC добавлен в автозагрузку.</p>
+<p>Снова запустите туннель SSH:</p>
+<p><code>ssh -L 5901:127.0.0.1:5901 -C -N -l 8host your_server_ip</code></p>
+<p>Создайте новое подключение с клиента VNC на localhost:5901, чтобы протестировать настройку.</p>
+<h2>Заключение</h2>
+<p>Теперь на сервере Ubuntu 18.04 установлен сервер VNC. С его помощью вы можете управлять файлами, программами и настройками удалённого сервера (например, удаленно запускать веб-браузер).</p>
+<div class="wpInsert wpInsertInPostAd wpInsertBelow" style="margin: 5px; padding: 0px;
+display:block"><!-- Top -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4672639452561295"
+     data-ad-slot="5472232813"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>						<div class="pagelink"></div>
+
+
+
+						Tags: <a href="https://www.8host.com/blog/tag/ubuntu-18-04/" rel="tag">Ubuntu 18.04</a>, <a href="https://www.8host.com/blog/tag/vnc/" rel="tag">VNC</a><br>
+						
+						
+<div id="disqus_thread">
+    </div>
+
+<script type="text/javascript">
+var disqus_url = 'https://www.8host.com/blog/ustanovka-i-nastrojka-vnc-v-ubuntu-18-04/';
+var disqus_identifier = '4094 https://www.8host.com/blog/?p=4094';
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = '8host-blog';
+var disqus_title = "Установка и настройка VNC в Ubuntu 18.04";
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    
+    this.language = '';
+        this.callbacks.onReady.push(function () {
+
+        // sync comments in the background so we don't block the page
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '?cf_action=sync_comments&post_id=4094';
+
+        var firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+    });
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+					</article>
+					<!-- /article -->
+
+				
+			
+	</section>
+	<!-- /section -->
+</main>
+</div>
+
+<div class="3u 12u$(small) article-sidebar">
+
+	<!-- sidebar -->
+		<aside class="sidebar" role="complementary">
+			<div class="sidebar-widget">
+				<div id="text-8" class="widget_text">			<div class="textwidget"><p><!-- Right 300x600 --><br />
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-4672639452561295"
+     data-ad-slot="4498842740"></ins><br />
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+</div>
+		</div><div id="categories-2" class="widget_categories"><h3>Рубрики</h3>		<ul>
+	<li class="cat-item cat-item-58"><a href="https://www.8host.com/blog/category/arch-linux/" title="Стабильный и простой дистрибутив Linux. Здесь вы найдете советы по установке, настройкам и обзоры. Отзывы и вопросы оставляйте в комментариях к статьям.">Arch Linux</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="https://www.8host.com/blog/category/centos/" title=" Дистрибутив Linux, основанный Red Hat Enterprise Linux. Здесь вы найдете рекомендации по установке, настройкам и обзоры. Отзывы оставляйте в комментариях.">Centos</a>
+</li>
+	<li class="cat-item cat-item-57"><a href="https://www.8host.com/blog/category/cloud-server/" title="Cloud Server - облачный виртуальный сервер VPS/VDS. Как установить и настроить VPS? Репликация баз данных и многое другое в статьях нашего информатория.">Cloud Server</a>
+</li>
+	<li class="cat-item cat-item-52"><a href="https://www.8host.com/blog/category/debian/" title="Рекомендации по настройке сервера на Debian Linux. Установка Git, настройка Nginx, установка стека LAMP. Отзывы и вопросы внизу статей.">Debian</a>
+</li>
+	<li class="cat-item cat-item-600"><a href="https://www.8host.com/blog/category/freebsd/" title="Установка ОС FreeBSD на VPS. Рекомендации, обзоры, советы по установкам FAMP Stack, Java, защита сайта от уязвимостей.">FreeBSD</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="https://www.8host.com/blog/category/ftp/" title="Как работать с FTP на виртуальном сервере (VPS). Использование SSL/TLS, рекомендации и советы.">FTP</a>
+</li>
+	<li class="cat-item cat-item-38"><a href="https://www.8host.com/blog/category/general/" title="Настройка DNS, использование SMTP-сервера и другие базовые действия настройки VPS на Linux. Советы и рекомендации в статьях">General</a>
+</li>
+	<li class="cat-item cat-item-179"><a href="https://www.8host.com/blog/category/java/" title="Установка Java в Ubuntu, CentOS 7, настройка фреймворка Node.js. Рекомендации, обзоры, советы по настройкам.">Java</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="https://www.8host.com/blog/category/lampstack/" title="Установка стека LAMP в Ubuntu, CentOS, Fedora 22, Debian, Arch Linux. Пошаговое описание процесса, рекомендации и отзывы.">LAMP Stack</a>
+</li>
+	<li class="cat-item cat-item-209"><a href="https://www.8host.com/blog/category/lemp-stack/" title="Установка стека LEMP Stack (Linux, nginx, MySQL, PHP) на Ubuntu, CentOS, Fedora 22, Debian, Arch Linux. Пошаговое описание процесса, рекомендации и отзывы.">LEMP Stack</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="https://www.8host.com/blog/category/linux/" title="Установка ОС Linux на VPS/VDS: пошаговые пособия по работе с БД, установка и обновление Nginx, работа с GitLab и многое другое">Linux</a>
+</li>
+	<li class="cat-item cat-item-235"><a href="https://www.8host.com/blog/category/mariadb/" title="Работа с базами данных MariaDB: рекомендации по резервному копированию и защите БД  на Ubuntu Linux. Советы и рекомендации в статьях, отзывы внизу статей.">MariaDB</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="https://www.8host.com/blog/category/mysql/" title="Установка и работа MySQL на VPS с ОС Ubuntu, FreeBSD.  Рекомендации, обзоры, советы по установке">mySQL</a>
+</li>
+	<li class="cat-item cat-item-16"><a href="https://www.8host.com/blog/category/php/" title="Работа с PHP-фреймворками на VPS с ОС Linux, масштабирование PHP-приложений, обновление PHP и другие вопросы и рекомендации в статьях.">PHP</a>
+</li>
+	<li class="cat-item cat-item-106"><a href="https://www.8host.com/blog/category/python/" title="Развертывание и обслуживание приложений Django и других приложений на Pyton на VPS. Рекомендации, обзоры, советы по установке">Python</a>
+</li>
+	<li class="cat-item cat-item-644"><a href="https://www.8host.com/blog/category/rhel/" title="Red Hat Enterprise Linux - установка, настройка VPS(виртуального сервера). Рекомендации, обзоры, советы по настройкам. Отзывы и вопросы внизу статей.">RHEL</a>
+</li>
+	<li class="cat-item cat-item-2"><a href="https://www.8host.com/blog/category/ruby/" title="Развёртывание Rails-приложения  и установка Ruby на VPS на Ubuntu, CentOS , Debian. Рекомендации, обзоры, советы по настройкам.">Ruby</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="https://www.8host.com/blog/category/ssh/" title="SSH-подключение к серверу VPS, установка и настройка, изменение паролей, использование SSH для подключения к удаленному серверу. Рекомендации и отзывы.">SSH</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="https://www.8host.com/blog/category/ubuntu/" title="Подбор статей о работе с сервером на Ubuntu разных версий. Настройки, установка, развертывание приложений.">Ubuntu</a>
+</li>
+	<li class="cat-item cat-item-37"><a href="https://www.8host.com/blog/category/vps/" >VPS</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://www.8host.com/blog/category/uncategorized/" title="Здесь вы найдете дополнительные материалы по установке приложений, ОС на VPS, советы по работе с БД. Всё, что не вошло в основные категории информатория">Без категорий</a>
+</li>
+		</ul>
+</div><style scoped type="text/css">.utcw-857bnk3 {word-wrap:break-word}.utcw-857bnk3 span,.utcw-857bnk3 a{border-width:0px}.utcw-857bnk3 span:hover,.utcw-857bnk3 a:hover{border-width:0px}</style><div id="utcw-2" class="widget_utcw widget_tag_cloud"><h3>Поиск по меткам</h3><div class="utcw-857bnk3 tagcloud"><a class="tag-link-270 utcw-tag utcw-tag-htaccess" href="https://www.8host.com/blog/tag/htaccess/" style="font-size:10.138408304498px" title="32 topics">.htaccess</a> <a class="tag-link-13 utcw-tag utcw-tag-apache" href="https://www.8host.com/blog/tag/apache/" style="font-size:22.110726643599px" title="205 topics">Apache</a> <a class="tag-link-14 utcw-tag utcw-tag-centos-2" href="https://www.8host.com/blog/tag/centos-2/" style="font-size:14.982698961938px" title="102 topics">CentOS</a> <a class="tag-link-169 utcw-tag utcw-tag-centos-6" href="https://www.8host.com/blog/tag/centos-6/" style="font-size:11.245674740484px" title="48 topics">CentOS 6</a> <a class="tag-link-299 utcw-tag utcw-tag-centos-7" href="https://www.8host.com/blog/tag/centos-7/" style="font-size:16.43598615917px" title="123 topics">CentOS 7</a> <a class="tag-link-1059 utcw-tag utcw-tag-cloud-server" href="https://www.8host.com/blog/tag/cloud-server/" style="font-size:17.681660899654px" title="141 topics">Cloud Server</a> <a class="tag-link-1058 utcw-tag utcw-tag-debian" href="https://www.8host.com/blog/tag/debian/" style="font-size:14.567474048443px" title="96 topics">Debian</a> <a class="tag-link-54 utcw-tag utcw-tag-debian-7" href="https://www.8host.com/blog/tag/debian-7/" style="font-size:10.207612456747px" title="33 topics">Debian 7</a> <a class="tag-link-712 utcw-tag utcw-tag-debian-8" href="https://www.8host.com/blog/tag/debian-8/" style="font-size:10.968858131488px" title="44 topics">Debian 8</a> <a class="tag-link-1185 utcw-tag utcw-tag-debian-9" href="https://www.8host.com/blog/tag/debian-9/" style="font-size:10.484429065744px" title="37 topics">Debian 9</a> <a class="tag-link-104 utcw-tag utcw-tag-django" href="https://www.8host.com/blog/tag/django/" style="font-size:11.176470588235px" title="47 topics">Django</a> <a class="tag-link-230 utcw-tag utcw-tag-dns" href="https://www.8host.com/blog/tag/dns/" style="font-size:10.415224913495px" title="36 topics">DNS</a> <a class="tag-link-396 utcw-tag utcw-tag-docker" href="https://www.8host.com/blog/tag/docker/" style="font-size:12.214532871972px" title="62 topics">Docker</a> <a class="tag-link-425 utcw-tag utcw-tag-elasticsearch" href="https://www.8host.com/blog/tag/elasticsearch/" style="font-size:10px" title="30 topics">ElasticSearch</a> <a class="tag-link-53 utcw-tag utcw-tag-git" href="https://www.8host.com/blog/tag/git/" style="font-size:12.352941176471px" title="64 topics">Git</a> <a class="tag-link-59 utcw-tag utcw-tag-iptables" href="https://www.8host.com/blog/tag/iptables/" style="font-size:10.346020761246px" title="35 topics">Iptables</a> <a class="tag-link-1062 utcw-tag utcw-tag-java" href="https://www.8host.com/blog/tag/java/" style="font-size:10.484429065744px" title="37 topics">Java</a> <a class="tag-link-193 utcw-tag utcw-tag-javascript" href="https://www.8host.com/blog/tag/javascript/" style="font-size:11.660899653979px" title="54 topics">Javascript</a> <a class="tag-link-269 utcw-tag utcw-tag-lamp-stack" href="https://www.8host.com/blog/tag/lamp-stack/" style="font-size:13.391003460208px" title="79 topics">LAMP stack</a> <a class="tag-link-852 utcw-tag utcw-tag-lets-encrypt" href="https://www.8host.com/blog/tag/lets-encrypt/" style="font-size:10.83044982699px" title="42 topics">Let's Encrypt</a> <a class="tag-link-1052 utcw-tag utcw-tag-linux" href="https://www.8host.com/blog/tag/linux/" style="font-size:30px" title="319 topics">Linux</a> <a class="tag-link-1064 utcw-tag utcw-tag-mariadb" href="https://www.8host.com/blog/tag/mariadb/" style="font-size:10.138408304498px" title="32 topics">MariaDB</a> <a class="tag-link-338 utcw-tag utcw-tag-mongodb" href="https://www.8host.com/blog/tag/mongodb/" style="font-size:10.76124567474px" title="41 topics">MongoDB</a> <a class="tag-link-167 utcw-tag utcw-tag-mysql-2" href="https://www.8host.com/blog/tag/mysql-2/" style="font-size:19.134948096886px" title="162 topics">MySQL</a> <a class="tag-link-120 utcw-tag utcw-tag-nginx" href="https://www.8host.com/blog/tag/nginx/" style="font-size:24.740484429066px" title="243 topics">NGINX</a> <a class="tag-link-192 utcw-tag utcw-tag-node-js" href="https://www.8host.com/blog/tag/node-js/" style="font-size:11.730103806228px" title="55 topics">Node.js</a> <a class="tag-link-423 utcw-tag utcw-tag-nosql" href="https://www.8host.com/blog/tag/nosql/" style="font-size:10.138408304498px" title="32 topics">NoSQL</a> <a class="tag-link-1055 utcw-tag utcw-tag-php" href="https://www.8host.com/blog/tag/php/" style="font-size:16.228373702422px" title="120 topics">PHP</a> <a class="tag-link-144 utcw-tag utcw-tag-postgresql" href="https://www.8host.com/blog/tag/postgresql/" style="font-size:11.314878892734px" title="49 topics">PostgreSQL</a> <a class="tag-link-1061 utcw-tag utcw-tag-python" href="https://www.8host.com/blog/tag/python/" style="font-size:14.01384083045px" title="88 topics">Python</a> <a class="tag-link-157 utcw-tag utcw-tag-python-3" href="https://www.8host.com/blog/tag/python-3/" style="font-size:13.114186851211px" title="75 topics">Python 3</a> <a class="tag-link-437 utcw-tag utcw-tag-rails" href="https://www.8host.com/blog/tag/rails/" style="font-size:10.276816608997px" title="34 topics">Rails</a> <a class="tag-link-1051 utcw-tag utcw-tag-ruby" href="https://www.8host.com/blog/tag/ruby/" style="font-size:12.214532871972px" title="62 topics">Ruby</a> <a class="tag-link-4 utcw-tag utcw-tag-ruby-on-rails" href="https://www.8host.com/blog/tag/ruby-on-rails/" style="font-size:10.415224913495px" title="36 topics">Ruby on Rails</a> <a class="tag-link-1056 utcw-tag utcw-tag-ssh" href="https://www.8host.com/blog/tag/ssh/" style="font-size:14.290657439446px" title="92 topics">SSH</a> <a class="tag-link-130 utcw-tag utcw-tag-ssl" href="https://www.8host.com/blog/tag/ssl/" style="font-size:15.951557093426px" title="116 topics">SSL</a> <a class="tag-link-207 utcw-tag utcw-tag-tls" href="https://www.8host.com/blog/tag/tls/" style="font-size:10.346020761246px" title="35 topics">TLS</a> <a class="tag-link-1053 utcw-tag utcw-tag-ubuntu" href="https://www.8host.com/blog/tag/ubuntu/" style="font-size:25.916955017301px" title="260 topics">Ubuntu</a> <a class="tag-link-24 utcw-tag utcw-tag-ubuntu-12-04" href="https://www.8host.com/blog/tag/ubuntu-12-04/" style="font-size:18.650519031142px" title="155 topics">Ubuntu 12.04</a> <a class="tag-link-191 utcw-tag utcw-tag-ubuntu-14-04" href="https://www.8host.com/blog/tag/ubuntu-14-04/" style="font-size:24.948096885813px" title="246 topics">Ubuntu 14.04</a> <a class="tag-link-902 utcw-tag utcw-tag-ubuntu-16-04" href="https://www.8host.com/blog/tag/ubuntu-16-04/" style="font-size:24.325259515571px" title="237 topics">Ubuntu 16.04</a> <a class="tag-link-1163 utcw-tag utcw-tag-ubuntu-18-04" href="https://www.8host.com/blog/tag/ubuntu-18-04/" style="font-size:13.529411764706px" title="81 topics">Ubuntu 18.04</a> <a class="tag-link-107 utcw-tag utcw-tag-virtualenv" href="https://www.8host.com/blog/tag/virtualenv/" style="font-size:10px" title="30 topics">virtualenv</a> <a class="tag-link-1057 utcw-tag utcw-tag-vps" href="https://www.8host.com/blog/tag/vps/" style="font-size:27.716262975779px" title="286 topics">VPS</a> <a class="tag-link-205 utcw-tag utcw-tag-wordpress" href="https://www.8host.com/blog/tag/wordpress/" style="font-size:11.660899653979px" title="54 topics">WordPress</a></div></div><div id="archives-2" class="widget_archive"><h3>Архивы</h3>		<label class="screen-reader-text" for="archives-dropdown-2">Архивы</label>
+		<select id="archives-dropdown-2" name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			
+			<option value="">Выберите месяц</option>
+				<option value='https://www.8host.com/blog/2018/12/'> Декабрь 2018 &nbsp;(14)</option>
+	<option value='https://www.8host.com/blog/2018/11/'> Ноябрь 2018 &nbsp;(21)</option>
+	<option value='https://www.8host.com/blog/2018/10/'> Октябрь 2018 &nbsp;(23)</option>
+	<option value='https://www.8host.com/blog/2018/09/'> Сентябрь 2018 &nbsp;(21)</option>
+	<option value='https://www.8host.com/blog/2018/08/'> Август 2018 &nbsp;(22)</option>
+	<option value='https://www.8host.com/blog/2018/07/'> Июль 2018 &nbsp;(29)</option>
+	<option value='https://www.8host.com/blog/2018/06/'> Июнь 2018 &nbsp;(27)</option>
+	<option value='https://www.8host.com/blog/2018/05/'> Май 2018 &nbsp;(27)</option>
+	<option value='https://www.8host.com/blog/2018/04/'> Апрель 2018 &nbsp;(26)</option>
+	<option value='https://www.8host.com/blog/2018/03/'> Март 2018 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2018/02/'> Февраль 2018 &nbsp;(25)</option>
+	<option value='https://www.8host.com/blog/2018/01/'> Январь 2018 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2017/12/'> Декабрь 2017 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2017/11/'> Ноябрь 2017 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2017/10/'> Октябрь 2017 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2017/09/'> Сентябрь 2017 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2017/08/'> Август 2017 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2017/07/'> Июль 2017 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2017/06/'> Июнь 2017 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2017/05/'> Май 2017 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2017/04/'> Апрель 2017 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2017/03/'> Март 2017 &nbsp;(33)</option>
+	<option value='https://www.8host.com/blog/2017/02/'> Февраль 2017 &nbsp;(28)</option>
+	<option value='https://www.8host.com/blog/2017/01/'> Январь 2017 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2016/12/'> Декабрь 2016 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2016/11/'> Ноябрь 2016 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2016/10/'> Октябрь 2016 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2016/09/'> Сентябрь 2016 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2016/08/'> Август 2016 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2016/07/'> Июль 2016 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2016/06/'> Июнь 2016 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2016/05/'> Май 2016 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2016/04/'> Апрель 2016 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2016/03/'> Март 2016 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2016/02/'> Февраль 2016 &nbsp;(29)</option>
+	<option value='https://www.8host.com/blog/2016/01/'> Январь 2016 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2015/12/'> Декабрь 2015 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2015/11/'> Ноябрь 2015 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2015/10/'> Октябрь 2015 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2015/09/'> Сентябрь 2015 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2015/08/'> Август 2015 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2015/07/'> Июль 2015 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2015/06/'> Июнь 2015 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2015/05/'> Май 2015 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2015/04/'> Апрель 2015 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2015/03/'> Март 2015 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2015/02/'> Февраль 2015 &nbsp;(28)</option>
+	<option value='https://www.8host.com/blog/2015/01/'> Январь 2015 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2014/12/'> Декабрь 2014 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2014/11/'> Ноябрь 2014 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2014/10/'> Октябрь 2014 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2014/09/'> Сентябрь 2014 &nbsp;(30)</option>
+	<option value='https://www.8host.com/blog/2014/08/'> Август 2014 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2014/07/'> Июль 2014 &nbsp;(31)</option>
+	<option value='https://www.8host.com/blog/2014/06/'> Июнь 2014 &nbsp;(25)</option>
+	<option value='https://www.8host.com/blog/2014/05/'> Май 2014 &nbsp;(22)</option>
+	<option value='https://www.8host.com/blog/2014/04/'> Апрель 2014 &nbsp;(22)</option>
+	<option value='https://www.8host.com/blog/2014/03/'> Март 2014 &nbsp;(20)</option>
+	<option value='https://www.8host.com/blog/2014/02/'> Февраль 2014 &nbsp;(6)</option>
+	<option value='https://www.8host.com/blog/2014/01/'> Январь 2014 &nbsp;(12)</option>
+	<option value='https://www.8host.com/blog/2013/12/'> Декабрь 2013 &nbsp;(11)</option>
+
+		</select>
+		</div>			</div>
+		</aside>
+	
+			<aside class="sidebar" role="complementary">
+			<div class="sidebar-widget">
+				<div id="text-11" class="widget_text">			<div class="textwidget"><p><!-- 300x600 v.2 --><br />
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 600px;" data-ad-client="ca-pub-4672639452561295" data-ad-slot="9427006842"></ins><br />
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+</div>
+		</div>			</div>
+		</aside>
+	
+	
+
+</div>
+</div>
+
+
+
+</div>
+</section>
+
+
+        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = '8host-blog';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1 && nodes[i].parentNode.tagName == 'A') {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        <script type='text/javascript' src='https://www.8host.com/blog/wp-includes/js/comment-reply.min.js?ver=4.8'></script>
+<script type='text/javascript' src='https://www.8host.com/blog/wp-includes/js/wp-embed.min.js?ver=4.8'></script>
+<!-- Footer -->
+<!-- Footer -->
+<footer id="footer">
+	<div class="container">
+		<section class="links">
+			<div class="row">
+				<section class="3u 6u(medium) 12u$(small)">
+					<h3>Продукт</h3>
+					<ul class="unstyled">
+						<li><a href="https://www.8host.com/pricing">Цены</a></li>
+						<li><a href="https://www.8host.com/features">Преимущества</a></li>
+						<li><a href="https://www.8host.com/pricing#payment-methods">Способы оплаты</a></li>
+<!--						<li><a href="http://www.8host.com/features#features-tech">Технологии</a></li>
+						<li><a href="#">API</a></li>-->
+					</ul>
+				</section>
+				<section class="3u 6u$(medium) 12u$(small)">
+					<h3>Компания</h3>
+					<ul class="unstyled">
+						<li><a href="https://www.8host.com/features#features-freedom">О нас</a></li>
+						<li><a href="https://www.8host.com/blog/">Блог</a></li>
+						<li><a href="https://www.8host.com/contact-us">Контакты</a></li>
+<!--						<li><a href="#">События</a></li>
+						<li><a href="#">Лого и бейджи</a></li>
+						<li><a href="#">Пресса</a></li>  -->
+					</ul>
+				</section>
+				<section class="3u 6u(medium) 12u$(small)">
+					<h3>Помощь</h3>
+					<ul class="unstyled">
+						<li><a href="https://www.8host.com/blog/">Информаторий</a></li>
+						<li><a href="https://www.8host.com/contact-us">Техподдержка</a></li>
+						<li><a href="https://www.8host.com/contact-us">Оставить запрос</a></li>
+<!--						<li><a href="#">Статус сети</a></li>
+						<li><a href="#">Вопросы и ответы</a></li>   -->
+					</ul>
+				</section>
+				<section class="3u$ 6u$(medium) 12u$(small)">
+					<h3>Преимущества</h3>
+					<ul class="unstyled">
+						<li><a href="https://www.8host.com/features#features-tech">Технологии</a></li>
+						<li><a href="https://www.8host.com/features#features-freedom">Свобода и безопасность</a></li>
+						<li><a href="https://www.8host.com/features#features-reliability">Надежность</a></li>
+						<li><a href="https://www.8host.com/features#features-access">Доступность</a></li>
+					</ul>
+				</section>
+			</div>
+		</section>
+	</div>
+	<section class="under-footer">
+		<div class="container">
+			<div class="row">
+				<div class="8u 12u$(medium)">
+					<ul class="copyright">
+						<li>© 2016 www.8host.com</li>
+						<li><a href='https://www.8host.com/privacy'>Безопасность</a></li>
+						<li><a href='https://www.8host.com/terms-and-conditions'>Условия предоставления услуг</a></li>
+					</ul>
+				</div>
+				<div class="4u$ 12u$(medium)">
+					<ul class="icons">
+						<li>
+							<a class="icon rounded fa-facebook" href="https://www.facebook.com/pages/8Host/1063590243670236?ref=hl"><span class="label">Facebook</span></a>
+						</li>
+						<li>
+							<a class="icon rounded fa-twitter" href="https://twitter.com/8Host_social"><span class="label">Twitter</span></a>
+						</li>
+						<li>
+							<a class="icon rounded fa-google-plus" href="https://plus.google.com/u/0/b/105145648824775848083/105145648824775848083/about"><span class="label">Google+</span></a>
+						</li>
+						<li>
+							<a class="icon rounded fa-linkedin" href="https://www.linkedin.com/grp/home?gid=8310064"><span class="label">LinkedIn</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+</footer>
+</body>
+</html>
+�(v�s      \ML\Ow?�;�       E    :https://www.8host.com/blog/ustanovka-i-nastrojka-vnc-v-ubuntu-18-04/ necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Date: Wed, 19 Dec 2018 13:53:51 GMT
+Server: Apache/2.2.15 (CentOS)
+X-Powered-By: PHP/5.6.32
+X-Pingback: https://www.8host.com/blog/xmlrpc.php
+Link: <https://www.8host.com/blog/wp-json/>; rel="https://api.w.org/", <https://www.8host.com/blog/?p=4094>; rel=shortlink
+Content-Type: text/html; charset=UTF-8
+ original-response-headers Date: Wed, 19 Dec 2018 13:53:51 GMT
+Server: Apache/2.2.15 (CentOS)
+X-Powered-By: PHP/5.6.32
+X-Pingback: https://www.8host.com/blog/xmlrpc.php
+Link: <https://www.8host.com/blog/wp-json/>; rel="https://api.w.org/"
+Link: <https://www.8host.com/blog/?p=4094>; rel=shortlink
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+ uncompressed-len 0 predictor::resource-count 52 predictor::https://fonts.googleapis.com/css?family=Exo+2:700|Open+Sans:400,700&subset=latin,cyrillic 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-content/themes/wp-8host-new/js/jquery.min.js?ver=1.0.0 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-content/themes/wp-8host-new/js/skel.min.js?ver=1.0.0 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-content/themes/wp-8host-new/js/skel-layers.min.js?ver=1.0.0 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-content/themes/wp-8host-new/js/init.js?ver=1.0.0 1,1,1545227596,4096 predictor::https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?ver=4.8 1,1,1545227596,4096 predictor::https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-content/plugins/si-captcha-for-wordpress/captcha/si_captcha.js?ver=1545227632 1,1,1545227596,4096 predictor::https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-content/themes/wp-8host-new/js/main.js 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-content/themes/wp-8host-new/images/logo-8host.png 1,1,1545227596,4097 predictor::https://www.8host.com/blog/wp-content/uploads/240x240_1.jpg 1,1,1545227596,4097 net-response-time-onstart 844 net-response-time-onstop 933 predictor::https://www.8host.com/blog/wp-includes/js/comment-reply.min.js?ver=4.8 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-includes/js/wp-embed.min.js?ver=4.8 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-includes/js/wp-emoji-release.min.js?ver=4.8 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-content/themes/wp-8host-new/css/style.css 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-content/themes/wp-8host-new/css/style-xlarge.css 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-content/themes/wp-8host-new/css/style-large.css 1,1,1545227596,4096 predictor::https://adservice.google.com.ua/adsid/integrator.js?domain=www.8host.com 1,1,1545227596,4096 predictor::https://adservice.google.com/adsid/integrator.js?domain=www.8host.com 1,1,1545227596,4096 predictor::https://8host.api.oneall.com/socialize/library.js 1,1,1545227596,4096 predictor::https://www.google-analytics.com/analytics.js 1,1,1545227596,4096 predictor::https://www.googletagmanager.com/gtm.js?id=GTM-5QBLV4 1,1,1545227596,4096 predictor::https://vk.com/rtrg?r=h/oz4XxFtFEerFNe9q2/YfYiHnSGXTUntBIbuR5tJptSPCyV0RzFc5qa1ST5*UCnXjj/fZ6XFBFRRAECdSw8toPbCzrpiwrq9KLsMAxI*MtjZe52iGwDqpq3hD6zbZgjeK6dayCbPtOh1A4DGAQjNfOu/DVXINl/cP*k/N9egxQ- 1,1,1545227596,4096 predictor::https://mc.yandex.ru/metrika/watch.js 1,1,1545227596,4096 predictor::https://pagead2.googlesyndication.com/pagead/js/r20181205/r20180604/show_ads_impl.js 1,1,1545227596,4096 predictor::https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 1,1,1545227596,4096 predictor::https://pagead2.googlesyndication.com/pub-config/r20160913/ca-pub-4672639452561295.js 1,1,1545227596,4096 predictor::https://8host-blog.disqus.com/embed.js 1,1,1545227596,4096 predictor::https://8host-blog.disqus.com/count.js 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-content/themes/wp-8host-new/css/font-awesome.min.css 1,1,1545227596,4096 predictor::https://www.8host.com/blog/wp-content/themes/wp-8host-new/images/footer-lines.png 1,1,1545227596,4096 predictor::https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0b.woff2 1,1,1545227596,4096 predictor::https://fonts.gstatic.com/s/exo2/v4/7cHrv4okm5zmbt6TDvs7wH8.woff2 1,1,1545227596,4096 predictor::https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhp.woff2 1,1,1545227596,4096 predictor::https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFUZ0bbck.woff2 1,1,1545227596,4096 predictor::https://fonts.gstatic.com/s/exo2/v4/7cHrv4okm5zmbt6TDvs_wH8RnA.woff2 1,1,1545227596,4096 predictor::https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOVuhpOqc.woff2 1,1,1545227596,4096 predictor::https://8host-blog.disqus.com/count-data.js?1=4094%20https%3A%2F%2Fwww.8host.com%2Fblog%2F%3Fp%3D4094 1,1,1545227596,4096 predictor::https://pagead2.googlesyndication.com/pagead/js/r20181205/r20100101/osd.js 1,1,1545227596,4096 predictor::https://stats.g.doubleclick.net/r/collect?t=dc&aip=1&_r=3&v=1&_v=j72&tid=UA-76215872-1&cid=229804641.1545227600&jid=1043350831&gjid=259237719&_gid=1447776259.1545227600&_u=aCjAgEAB~&z=1525655420 1,1,1545227596,4096 predictor::https://cdn.ampproject.org/rtv/011812051624460/amp4ads-host-v0.js 1,1,1545227596,4096 predictor::https://mc.yandex.ru/metrika/advert.gif 1,1,1545227596,4096 predictor::https://c.disquscdn.com/next/embed/alfalfa_min.d078e4f2a4721192a99e02601a767617.js 1,1,1545227596,4096 predictor::https://cdn.viglink.com/images/pixel.gif?ch=1&rn=5.790922216675392 1,1,1545227596,4096 predictor::https://cdn.viglink.com/images/pixel.gif?ch=2&rn=5.790922216675392 1,1,1545227596,4096 predictor::https://www.8host.com/blog/ustanovka-i-nastrojka-vnc-v-ubuntu-18-04/?cf_action=sync_comments&post_id=4094 1,1,1545227596,4096 predictor::https://links.services.disqus.com/api/sync.gif?partner_id=lot 1,1,1545227596,4096 predictor::https://links.services.disqus.com/api/sync.gif?partner_id=eyt 1,1,1545227596,4096 predictor::https://links.services.disqus.com/api/sync.gif?partner_id=svn 1,1,1545227596,4096 predictor::https://pagead2.googlesyndication.com/pagead/gen_204?id=ovlp&adf=3101951905&client=ca-pub-4672639452561295&eid=332260013%2C21060853&et=4&saldr=aa&slot=5472232813&sp=0%2C7837&tgt=ins%2Faswift_1_expand.0&tr=404.5%2C398.4666748046875%2C862.5%2C714.4666748046875&url=https%3A%2F%2Fwww.8host.com%2Fblog%2Fustanovka-i-nastrojka-vnc-v-ubuntu-18-04%2F&vp=1268x846 1,1,1545227596,4096   �

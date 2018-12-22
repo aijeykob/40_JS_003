@@ -1,0 +1,24 @@
+{
+    "telemetry.machineId": "fe739baeedd054eeb176446ddbd6b2ee2f1846d1f5fb4cf4ab4d24fc14e133cd",
+    "theme": "vs-dark",
+    "themeBackground": "#1e1e1e",
+    "windowsState": {
+        "openedWindows": [],
+        "lastActiveWindow": {
+            "backupPath": "/home/student/.config/Code/Backups/1545227864583",
+            "uiState": {
+                "mode": 1,
+                "x": 328,
+                "y": 141,
+                "width": 1024,
+                "height": 768
+            }
+        }
+    },
+    "openedPathsList": {
+        "workspaces2": [],
+        "files2": [
+            "file:///home/student/Documents/Js40/lesson03/lesson03.html"
+        ]
+    }
+}

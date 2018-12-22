@@ -1,0 +1,5 @@
+2018/12/22-10:01:25.159 3cbb Recovering log #7
+2018/12/22-10:01:25.159 3cbb Level-0 table #9: started
+2018/12/22-10:01:25.228 3cbb Level-0 table #9: 598 bytes OK
+2018/12/22-10:01:25.502 3cbb Delete type=0 #7
+2018/12/22-10:01:25.503 3cbb Delete type=3 #6

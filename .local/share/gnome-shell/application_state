@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="gnome-control-center.desktop" open-window-count="0" score="26" last-seen="1545235236"/>
+    <application id="firefox.desktop" open-window-count="0" score="69" last-seen="1545235317"/>
+    <application id="org.gnome.Nautilus.desktop" open-window-count="1" score="17" last-seen="1545465855"/>
+    <application id="update-manager.desktop" open-window-count="0" score="2" last-seen="1545224035"/>
+    <application id="code.desktop" open-window-count="1" score="61" last-seen="1545466168"/>
+    <application id="google-chrome.desktop" open-window-count="1" score="93" last-seen="1545466821"/>
+    <application id="org.remmina.Remmina.desktop" open-window-count="2" score="186" last-seen="1545466839"/>
+    <application id="seahorse.desktop" open-window-count="0" score="4" last-seen="1545230971"/>
+    <application id="org.gnome.Terminal.desktop" open-window-count="1" score="22" last-seen="1545466839"/>
+    <application id="apport-gtk.desktop" open-window-count="0" score="0" last-seen="1545245705"/>
+    <application id="grub-customizer.desktop" open-window-count="0" score="34" last-seen="1545231416"/>
+    <application id="gnome-initial-setup.desktop" open-window-count="0" score="38" last-seen="1545223957"/>
+    <application id="libreoffice-writer.desktop" open-window-count="0" score="448" last-seen="1545235327"/>
+    <application id="org.gnome.Software.desktop" open-window-count="0" score="13" last-seen="1545235312"/>
+  </context>
+</application-state>
